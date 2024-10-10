@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendação de Músicas</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="/static/images/onda-sonora-1.png" class="logo-onda" alt="onda-sonora-1">
+        <h1>FlowBeat</h1>
+        <form method="post" action="/">
+            <label for="genero">Escolha um gênero:</label>
+            <div class="custom-select">
+                <div class="selected">Selecione um gênero</div>
+                <div class="options">
+                    <div class="option" data-value="Rock">Rock</div>
+                    <div class="option" data-value="Pop">Pop</div>
+                    <div class="option" data-value="Jazz">Jazz</div>
+                    <div class="option" data-value="Eletrônica">Eletrônica</div>
+                    <div class="option" data-value="Hip-Hop">Hip-Hop</div>
+                    <div class="option" data-value="Country">Country</div>
+                    <div class="option" data-value="Clássica">Clássica</div>
+                    <div class="option" data-value="Reggae">Reggae</div>
+                    <div class="option" data-value="Blues">Blues</div>
+                    <div class="option" data-value="Funk">Funk</div>
+                    <div class="option" data-value="Sertanejo">Sertanejo</div>
+                    <div class="option" data-value="K-Pop">K-Pop</div>
+                    <div class="option" data-value="R&B">R&B</div>
+                    <div class="option" data-value="Soul">Soul</div>
+                    <div class="option" data-value="Pagode">Pagode</div>
+                    <div class="option" data-value="MPB">MPB</div>
+                    <div class="option" data-value="Samba">Samba</div>
+                    <div class="option" data-value="Forró">Forró</div>
+                    <div class="option" data-value="Trap">Trap</div>
+                </div>
+            </div>
+            <input type="hidden" name="genero" id="genero" value=""> <!-- Campo oculto -->
+            <button type="submit">Recomendar</button>
+        </form>
+
+        {% if recomendacoes %}
+            <h2>Músicas Recomendadas:</h2>
+            <ul>
+                {% for musica in recomendacoes %}
+                    <li>{{ musica.nome }} - {{ musica.artista }}
+                        <span class="genero">{{ musica.genero }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if recomendacoes_similares %}
+            <div class="container-similares">
+                <h2>Você Pode Gostar Também:</h2>
+                <ul>
+                    {% for musica in recomendacoes_similares %}
+                        <li>{{ musica.nome }} - {{ musica.artista }}
+                            <span class="genero">{{ musica.genero }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

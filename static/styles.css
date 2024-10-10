@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #121212; /* Fundo escuro semelhante ao Spotify */
+    color: #FFFFFF; /* Texto branco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo-onda {
+    width: 15%;
+}
+
+h1 {
+    color: #1DB954; /* Cor verde do Spotify */
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 7900;
+}
+
+.container {
+    background-color: #181818; /* Fundo de conteúdo */
+    padding: 60px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    text-align: center;
+    transition: all 0.3s ease; /* Transição suave */
+}
+
+.container-similares {
+    background-color: #181818; /* Fundo semelhante para as músicas similares */
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.selected {
+    background-color: #2c2c2c; /* Cor do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 8px 8px 0px 0px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    transition: background-color 0.3s ease; /* Transição suave para o fundo */
+}
+
+.options {
+    display: none; /* Oculto por padrão */
+    position: absolute; /* Faz as opções flutuarem sobre o conteúdo */
+    background-color: #2c2c2c; /* Cor de fundo */
+    border-radius: 0px 0px 0px 8px; /* Bordas arredondadas */
+    z-index: 1; /* Fica acima dos outros elementos */
+    width: 100%; /* Largura total do seletor */
+    max-height: 150px; /* Altura máxima */
+    overflow-y: auto; /* Scroll se as opções excederem a altura */
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Inicialmente invisível */
+}
+
+/* Estilização do scroll em navegadores WebKit (Chrome, Safari, Edge) */
+.options::-webkit-scrollbar {
+    width: 8px; /* Largura do scrollbar */
+}
+
+.options::-webkit-scrollbar-track {
+    background: #282828; /* Cor do fundo do track (trilho) */
+    border-radius: 8px;
+}
+
+.options::-webkit-scrollbar-thumb {
+    background-color: #1DB954; /* Cor do "polegar" (a parte que você arrasta) */
+    border-radius: 8px;
+    border: 2px solid #282828; /* Cria um espaço ao redor do thumb */
+}
+
+/* Mudança de cor ao passar o mouse no thumb */
+.options::-webkit-scrollbar-thumb:hover {
+    background-color: #1ed760; /* Cor mais clara ao passar o mouse */
+}
+
+.option {
+    padding: 10px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.option:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Efeito de destaque */
+}
+
+.show {
+    display: block; /* Exibe as opções */
+    opacity: 1; /* Transição suave de opacidade */
+}
+
+button {
+    margin-top: 20px;
+    background-color: #1DB954;
+    color: #1f1f1f;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease; /* Transição suave */
+}
+
+button:hover {
+    box-shadow: 0 0 10px rgba(29, 185, 84, 0.8), 0 0 10px rgba(29, 185, 84, 0.6); /* Brilho verde neon */
+    transform: scale(1.05); /* Aumenta ligeiramente o botão */
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #282828;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+}
+
+li:hover {
+    background-color: #333;
+}
+
+.genero {
+    font-size: 0.7rem; /* Tamanho da fonte menor */
+    color: #1a1a1a; /* Cor do texto para o gênero */
+    font-weight: 800;
+    background-color: #1DB954; /* Fundo escuro para contraste */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 2px 5px; /* Espaçamento interno */
+    margin-left: 10px; /* Espaçamento à esquerda */
+    text-transform: uppercase; /* Letras maiúsculas */
+    display: inline-block; /* Para que o background seja aplicado */
+}
